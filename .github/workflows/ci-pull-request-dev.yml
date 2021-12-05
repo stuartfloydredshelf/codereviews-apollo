@@ -19,7 +19,7 @@ jobs:
       - name: Prettier code check
         uses: creyD/prettier_action@v4.0
         with:
-          prettier_options: --check ./src/**/*.js
+          prettier_options: --check ./*.js
   pr-dev-build-and-deploy: 
     runs-on: ubuntu-latest
     needs: [pr-dev-code-conformity]
