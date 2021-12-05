@@ -1,0 +1,20 @@
+name: Push workflow
+on: push
+jobs:
+  push-code-conformity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Specify node version
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install modules
+        run: npm install
+      - name: ESLint code check
+        run: npm run lint
+      - name: Prettier code check
+        uses: creyD/prettier_action@v4.0
+        with:
+          prettier_options: --check ./src/**/*.js

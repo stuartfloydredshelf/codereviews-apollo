@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint  --ignore-path .gitignore .",
+    "prettier": "npx prettier --check graphql.js",
+    "deploy": "serverless deploy"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,16 @@
     "elasticsearch": "^16.7.2",
     "graphql": "^15.7.2",
     "http-aws-es": "^6.0.0"
+  },
+  "devDependencies": {
+    "@serverless/eslint-config": "^4.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.3",
+    "git-list-updated": "^1.2.1",
+    "prettier": "^2.5.1"
+  },
+  "eslintConfig": {
+    "extends": "@serverless/eslint-config/node",
+    "root": true
   }
 }
