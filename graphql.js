@@ -1,4 +1,3 @@
-// Moving to serverless
 // const { ApolloServer, gql } = require('apollo-server');
 const { ApolloServer, gql } = require('apollo-server-lambda');
 const axios = require('axios');
